@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c1duv5rv4lq4b"]
+
+[ext_resource type="Texture2D" uid="uid://4le8llv1i6ma" path="res://icon.svg" id="1_pncii"]
+
+[resource]
+albedo_color = Color(0.16862746, 0.4862745, 0.15686275, 1)
+albedo_texture = ExtResource("1_pncii")
+uv1_triplanar = true
