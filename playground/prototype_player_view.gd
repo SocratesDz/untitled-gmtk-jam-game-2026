@@ -1,8 +1,9 @@
 extends Node3D
 class_name PrototypePlayerView
 
-var is_running: bool = false
-var is_idle: bool = false
+enum MovementState { IDLE, RUNNING }
+
+var movement_state: MovementState = MovementState.IDLE
 
 @onready var animation_tree = $AnimationTree
 var motion_state_machine: AnimationNodeStateMachine
@@ -24,14 +25,8 @@ func _ready() -> void:
 
 
 func play_idle_animation() -> void:
-	is_running = false
-	is_idle = true
-	motion_state_machine.set("parameters/conditions/is_idle", is_idle)
-	motion_state_machine.set("parameters/conditions/is_running", is_running)
+	movement_state = MovementState.IDLE
 
 
 func play_running_animation() -> void:
-	is_running = true
-	is_idle = false
-	motion_state_machine.set("parameters/conditions/is_idle", is_idle)
-	motion_state_machine.set("parameters/conditions/is_running", is_running)
+	movement_state = MovementState.RUNNING
