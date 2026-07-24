@@ -13,6 +13,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
+	if Input.is_action_just_pressed("shoot"):
+		player_view.play_shoot_animation()
+
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
