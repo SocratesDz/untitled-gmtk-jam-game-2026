@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://mpmfctsbb8cb"]
 
 [ext_resource type="Script" uid="uid://cmhxhr7ajnos6" path="res://playground/prototype_player.gd" id="1_cb22m"]
+[ext_resource type="PackedScene" uid="uid://di4055vc6fsjs" path="res://playground/prototype_player_view.tscn" id="2_jfb0y"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_bsk2x"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kponf"]
+radius = 0.3515625
+height = 1.7983398
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xokcv"]
 albedo_color = Color(1, 0.19215687, 0.08235294, 1)
@@ -17,13 +20,17 @@ script = ExtResource("1_cb22m")
 
 [node name="Body" type="MeshInstance3D" parent="." unique_id=1238974436]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_bsk2x")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=712002205]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8991699, 0)
 shape = SubResource("CapsuleShape3D_kponf")
 
 [node name="Face" type="MeshInstance3D" parent="." unique_id=606886108]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.360153, 0.34109116)
+visible = false
 material_override = SubResource("StandardMaterial3D_xokcv")
 mesh = SubResource("BoxMesh_bsk2x")
+
+[node name="PrototypePlayerView" parent="." unique_id=1555312534 instance=ExtResource("2_jfb0y")]
