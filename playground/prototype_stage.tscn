@@ -86,5 +86,6 @@ transform = Transform3D(1, 0, 0, 0, 0.7167732, 0.6973064, 0, -0.6973064, 0.71677
 light_energy = 2.593
 sky_mode = 2
 
-[node name="PrototypePlayer" parent="." unique_id=384679381 instance=ExtResource("2_2nwn7")]
+[node name="PrototypePlayer" parent="." unique_id=384679381 node_paths=PackedStringArray("camera") instance=ExtResource("2_2nwn7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+camera = NodePath("../Camera3D")
