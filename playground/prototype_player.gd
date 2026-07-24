@@ -3,6 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 
+@onready var player_view := $PrototypePlayerView
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -16,8 +17,10 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		player_view.play_running_animation()
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		player_view.play_idle_animation()
 
 	move_and_slide()
